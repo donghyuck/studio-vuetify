@@ -1,0 +1,52 @@
+{
+  "name": "theme-vite-free",
+  "version": "1.0.2",
+  "private": true,
+  "author": {
+    "name": "Donghyuck Son",
+    "email": "andang.son@gmail.com"
+  },
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint --fix",
+    "preview": "vite preview",
+    "postversion": "node scripts/postversion.cjs"
+  },
+  "dependencies": {
+    "@mdi/font": "7.1.96",
+    "pinia": "^2.0.29",
+    "roboto-fontface": "*",
+    "unsplash-js": "^7.0.15",
+    "vite-plugin-pages": "^0.28.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.0.0",
+    "webfontloader": "^1.6.28",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/test-utils": "^2.2.8",
+    "@vue/tsconfig": "^0.1.3",
+    "archiver": "^5.3.1",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "shelljs": "^0.8.5",
+    "@types/jsdom": "^20.0.1",
+    "@types/node": "^18.11.18",
+    "typescript": "~4.9.4",
+    "vite": "^4.0.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-pages": "^0.28.0",
+    "vite-plugin-vuetify": "^1.0.2"
+  }
+}
