@@ -8,9 +8,9 @@
                     <h4 class="subheading">Build your application today!</h4>
                 </div> -->
             </v-parallax>
-            <div class="mr-auto ml-10 mb-50" style="position:absolute; bottom:100px; font-size: .9rem;">
+            <div class="mr-auto ml-10 mb-50" style="position:absolute; bottom:150px; font-size: .8rem;">
                 <v-card color="transparent" theme="dark" max-width="450" v-if="bgPhoto.visible" flat>
-                    <v-card-text class="text-h7 py-2">{{ bgPhoto.unsplash.alt_description }}</v-card-text>
+                    <v-card-text class="text-h7 py-2">{{ bgPhoto.unsplash.description || bgPhoto.unsplash.alt_description }}</v-card-text>
                     <v-card-actions>
                         <v-list-item class="w-100">
                             <template v-slot:prepend>
@@ -19,9 +19,9 @@
                                 </v-avatar>
                             </template>
                             <v-list-item-title style="font-size: .8rem;">{{ bgPhoto.unsplash.user.name }}</v-list-item-title>
-                            <!-- <v-list-item-subtitle>{{ bgPhoto.unsplash.user.name }}</v-list-item-subtitle> -->
+                            <v-list-item-subtitle><small>{{ bgPhoto.unsplash.location.name }}</small></v-list-item-subtitle>
                             <template v-slot:append>
-                                <div class="justify-self-end">
+                                <div class="justify-self-end ml-5">
                                     <v-icon class="me-1" icon="mdi-thumb-up"></v-icon>
                                     <span class="subheading me-2">{{ bgPhoto.unsplash.likes }}</span>
                                     <span class="me-1">·</span>
@@ -93,3 +93,6 @@ function bgUpdateFromUnsplash() {
     }
 }
 </script>
+<style scoped>
+ 
+</style>

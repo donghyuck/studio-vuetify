@@ -17,7 +17,8 @@ const links = computed(() => ([
         {{ link }}
       </v-tab>
     </v-tabs>
-    <v-spacer></v-spacer>
-    <v-avatar class="hidden-sm-and-down" color="grey-darken-1" size="32"></v-avatar>
+    <template v-slot:append>
+      <v-avatar class="hidden-sm-and-down" color="grey-darken-1" size="32"></v-avatar>
+    </template>
   </v-app-bar>
 </template>

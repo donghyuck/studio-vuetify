@@ -1,17 +1,13 @@
-# [Vite Theme Free](https://store.vuetifyjs.com/products/vite-theme-free)
-A free Vuetify 3 theme using Vite.
+# [Studio Vuetify version]( https://github.com/donghyuck/studio-vuetify )
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg)[![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.com/invite/s93b7Fv)
-
+This project using A free Vuetify 3 theme.
 **Vite Theme Free** is a beautiful resource built over [Vite](https://vitejs.dev/guide/), [Vuetify 3](https://next.vuetifyjs.com/en/) and [Vuejs 3](https://vuejs.org/). It will help you get started and quickly developing your Vuetify 3 Vite applications in no time. Using the Vite theme is pretty simple but requires basic knowledge of Javascript, [Vuejs](https://vuejs.org/v2/guide/) and [Vite](https://vitejs.dev/guide/).
 
 ## Getting Started
 
 - Install Nodejs from the official [Nodejs page](https://nodejs.org/en/)
 - Install Yarn from the official [Yarn installation page](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
-- Unzip the `vite-theme-free.zip` file downloaded from the Vuetify store
-- Create a folder named `vite-theme` and unzip the `vite-theme-free.zip` file provided by the previous step
-- Open your terminal and navigate to the `vite-theme` directory
 - Run `yarn install` to install the project's dependencies
 - Run `yarn dev` to start a local development server
 
@@ -108,14 +104,14 @@ vite-theme-free/
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the **Vite Theme Free** theme. Here is some advice for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the **Studio Vuetify**. Here is some advice for our users that want to report an issue:
 
 1. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 2. Some issues may be browser specific, so specifying what browser you encountered the issue will be helpful.
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product please reach out in [Discord](https://discord.com/invite/s93b7Fv) or file an issue [here](https://github.com/vuetifyjs/premium-theme-issues).
+If you have questions or need help integrating the product please reach out in file an issue [here](https://github.com/donghyuck/studio-vuetify/issues).
 
 ## Licensing
 
@@ -124,10 +120,7 @@ If you have questions or need help integrating the product please reach out in [
 
 ## Useful Links
 
-- [Vuetify Documentation](https://vuetifyjs.com/)
-- [Vuetify Store](https://store.vuetifyjs.com/)
-- [Discord](https://community.vuetifyjs.com)
-- [Twitter](https://twitter.com/vuetifyjs)
+- [Vuetify Documentation](https://vuetifyjs.com/) 
 
 <br>
 
