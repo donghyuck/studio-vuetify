@@ -61,14 +61,28 @@ Within the download you'll find the following directories and files:
 <details>
 
 ```txt
-vite-theme-free/
+studio-vuetify/
 ┣ public/
 ┃ ┗ favicon.ico
+┣ script/
+┃ ┗ postversion.cjs
 ┣ src/
+┃ ┣ layouts/
+┃ ┃ ┣  footers
+┃ ┃ ┃  ┗ FooterDefault.vue
+┃ ┃ ┗  navvers
+┃ ┃    ┗ NavbarDefault.vue
 ┃ ┣ plugins/
-┃ ┃ ┃  index.js
-┃ ┃ ┃  vuetify.js
-┃ ┃ ┗  webfontloader.js
+┃ ┃ ┃  index.ts
+┃ ┃ ┃  vuetify.ts
+┃ ┃ ┗  webfontloader.ts
+┃ ┣ router
+┃ ┃ ┗  index.ts
+┃ ┣ store
+┃ ┃ ┗  unsplash.js
+┃ ┣ views
+┃ ┃ ┃  Index.vues
+┃ ┃ ┗  Login.vue
 ┃ ┣ App.vue
 ┃ ┗ main.js
 ┣ .editorconfig
@@ -76,6 +90,10 @@ vite-theme-free/
 ┣ index.html
 ┣ package.json
 ┣ README.md
+┣ tsconfig.app.json
+┣ tsconfig.config.json
+┣ tsconfig.json
+┣ tsconfig.vitest.json
 ┣ vite.config.js
 ┗ yarn.lock
 ```
@@ -94,13 +112,11 @@ vite-theme-free/
 | Internet Explorer | ⛔ Not supported |
 
 ## Resources
-
-- [Live Preview](https://store.vuetifyjs.com/products/vite-theme-free/preview)
-- Product Page: [Product](https://store.vuetifyjs.com/products/vite-theme-free)
+ 
+- Product Page: [Product](https://github.com/donghyuck/studio-vuetify)
 - Vuetify Documentation is [Here](https://vuetifyjs.com/)
 - License Agreement: [License](https://store.vuetifyjs.com/licenses)
-- Contact: [Contact](https://store.vuetifyjs.com/contact-us)
-- Issues: [Github Issues Page](https://github.com/vuetifyjs/premium-theme-issues)
+- Issues: [Github Issues Page](https://github.com/donghyuck/studio-vuetify/issues)
 
 ## Reporting Issues
 
