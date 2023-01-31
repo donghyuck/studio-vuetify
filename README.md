@@ -1,4 +1,4 @@
-# [Studio Vuetify version]( https://github.com/donghyuck/studio-vuetify )
+# [Studio Vuetify ]( https://github.com/donghyuck/studio-vuetify )
 ![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 This project using A free Vuetify 3 theme.
