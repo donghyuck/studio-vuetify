@@ -38,8 +38,7 @@ to as little as possible. Almost everything is inside `package.json` + some othe
 Let us know what you think and what we can improve below. And good luck with development!
 
 ## Table of Contents
-
-- [Demo](#demo)
+ 
 - [Quick Start](#quick-start)
 - [Documentation](#documentation)
 - [File Structure](#file-structure)
@@ -50,10 +49,7 @@ Let us know what you think and what we can improve below. And good luck with dev
 - [Licensing](#licensing)
 - [Useful Links](#useful-links)
 
-## Demo
-
-- [Demo page](https://store.vuetifyjs.com/products/vite-theme-free/preview)
-
+ 
 ## File Structure
 
 Within the download you'll find the following directories and files:
@@ -62,27 +58,41 @@ Within the download you'll find the following directories and files:
 
 ```txt
 studio-vuetify/
+
 ┣ public/
 ┃ ┗ favicon.ico
 ┣ script/
 ┃ ┗ postversion.cjs
 ┣ src/
+┃ ┗ assets/
+┃ ┃ ┗ img/
+┃ ┃    ┗  no-avatar.png
 ┃ ┣ layouts/
-┃ ┃ ┣  footers
+┃ ┃ ┣  footers/
 ┃ ┃ ┃  ┗ FooterDefault.vue
-┃ ┃ ┗  navvers
-┃ ┃    ┗ NavbarDefault.vue
+┃ ┃ ┗  navvers/
+┃ ┃ ┃  ┣ NavbarDefault.vue
+┃ ┃ ┃  ┣ ThemeToggle.vue
+┃ ┃ ┃  ┗ UserProfileMenu.vue
 ┃ ┣ plugins/
 ┃ ┃ ┃  index.ts
 ┃ ┃ ┃  vuetify.ts
 ┃ ┃ ┗  webfontloader.ts
-┃ ┣ router
+┃ ┣ router/
+┃ ┃ ┣  accounts.router.ts
 ┃ ┃ ┗  index.ts
-┃ ┣ store
-┃ ┃ ┗  unsplash.js
-┃ ┣ views
-┃ ┃ ┃  Index.vues
-┃ ┃ ┗  Login.vue
+┃ ┣ store/
+┃ ┃ ┣  alert.store.ts 
+┃ ┃ ┣  auth.store.ts 
+┃ ┃ ┣  prefs.store.ts 
+┃ ┃ ┣  unsplash.ts
+┃ ┃ ┗  user.store.ts
+┃ ┣ util/
+┃ ┃ ┗  helpers.ts
+┃ ┣ views/
+┃ ┃ ┣  Index.vues
+┃ ┃ ┣  Login.vues
+┃ ┃ ┗  Today.vue
 ┃ ┣ App.vue
 ┃ ┗ main.js
 ┣ .editorconfig
@@ -130,16 +140,8 @@ We use GitHub Issues as the official bug tracker for the **Studio Vuetify**. Her
 If you have questions or need help integrating the product please reach out in file an issue [here](https://github.com/donghyuck/studio-vuetify/issues).
 
 ## Licensing
-
 - Copyright 2022 Vuetify <https://vuetifyjs.com>
 - Vuetify [License Information](https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md)
 
 ## Useful Links
-
 - [Vuetify Documentation](https://vuetifyjs.com/) 
-
-<br>
-
-<p align="center">
-  <img src="https://cdn.vuetifyjs.com/docs/images/logos/v.png" height="128">
-</p>
