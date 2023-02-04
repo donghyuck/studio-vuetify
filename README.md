@@ -1,5 +1,5 @@
 # [Studio Vuetify ]( https://github.com/donghyuck/studio-vuetify )
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![version](https://img.shields.io/badge/version-0.0.2-blue.svg)
 
 This project using A free Vuetify 3 theme.
 **Vite Theme Free** is a beautiful resource built over [Vite](https://vitejs.dev/guide/), [Vuetify 3](https://next.vuetifyjs.com/en/) and [Vuejs 3](https://vuejs.org/). It will help you get started and quickly developing your Vuetify 3 Vite applications in no time. Using the Vite theme is pretty simple but requires basic knowledge of Javascript, [Vuejs](https://vuejs.org/v2/guide/) and [Vite](https://vitejs.dev/guide/).
