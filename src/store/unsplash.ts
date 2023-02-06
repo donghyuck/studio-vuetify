@@ -6,7 +6,7 @@ import { createApi } from 'unsplash-js'
 //import whatwgFetch from "whatwg-fetch";
 
 const unsplash = createApi({
-  accessKey: 'A1gQ3uxeoBz6WHlaRocOlce1Pg0PHXNrTHU8qM_yoA0',
+  accessKey: import.meta.env.VITE_UNSPLASH_API_KEY,
   //fetch: whatwgFetch,
 })
 
