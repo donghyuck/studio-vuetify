@@ -29,11 +29,15 @@ export default defineConfig({
     // https://github.com/fi3ework/vite-plugin-checker
     checker({
       typescript: true,
-      vueTsc: true,
+      // usgin Volar checker only vue 3.
+      //vueTsc: true,
       eslint: {
         lintCommand:
-          "eslint . --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint", // for example, lint .ts & .tsx
+         "eslint . --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint", // for example, lint .ts & .tsx
       },
+      // stylelint: { 
+      //   lintCommand: 'stylelint ./src/**/*.{css,vue}',
+      // },
     }),
   ],
   define: { "process.env": {} },

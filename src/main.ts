@@ -17,13 +17,17 @@ import { createPinia } from 'pinia'
 import { registerPlugins } from "./plugins";
 import vuetify from "./plugins/vuetify";
 
-
 // Load Layout vue.
 import App from './App.vue';
+
+// mansonry layout plugin.
+import { VueMasonryPlugin } from 'vue-masonry';
 
 const app = createApp(App);
 registerPlugins(app);
 app.use(createPinia())
 app.use(router);
-app.use(vuetify);
+app.use(vuetify); 
+app.use(VueMasonryPlugin)
 app.mount("#app");
+

@@ -2,7 +2,7 @@
   <v-menu min-width="200px" rounded :close-on-content-click="false">
     <template #activator="{ props }">
       <div v-bind="props">
-        <v-avatar color="grey-darken-1" size="32" :image="user.getAvatarUrl()" />
+        <v-avatar color="grey-darken-1" size="32" :image="user.curretnUserAvatarUrl" />
         <v-icon end icon="mdi-chevron-down" size="x-small" />
       </div>
     </template>

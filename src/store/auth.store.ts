@@ -1,7 +1,8 @@
 // Utilities
 import { defineStore } from "pinia";
 import router from "@/router";
-import { useAlertStore } from "@/store/alert.store";
+import { useAlertStore } from "./alert.store";
+import { useUserStore } from "./user.store";
 import axios from "axios";
 
 const baseUrl = `${import.meta.env.VITE_API_URL}/data/accounts/signin.json`;
@@ -40,6 +41,9 @@ export const useAuthStore = defineStore({
         this.user = user;
         // update pinia state
         localStorage.setItem("studio@user", JSON.stringify(user));
+        
+        useUserStore().me();
+
         router.push(this.returnUrl || "/");
       } catch (error) {
         const alertStore = useAlertStore();

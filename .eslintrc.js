@@ -30,7 +30,7 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     // set maximum line characters
     'max-len': ['error', {
-      code: 150,
+      code: 180,
       ignoreUrls: true,
       ignoreTemplateLiterals: true,
       ignoreTrailingComments: true,

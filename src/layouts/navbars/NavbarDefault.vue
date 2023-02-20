@@ -19,8 +19,8 @@ interface MenuItem {
 }
 const links: MenuItem[] = [
   { name: 'Today', path: '/today', authenticationRequired: true },
-  { name: 'Me Photo', path: '', authenticationRequired: true },
-  { name: 'Me Drive', path: '', authenticationRequired: true },
+  { name: 'Me Photos', path: '/me/photos', authenticationRequired: true },
+  { name: 'Me Drive', path: '/me/drive', authenticationRequired: true },
 ]
 const items = [
   { title: 'Click Me' },
@@ -29,7 +29,7 @@ const items = [
 </script>
 <template>
   <v-app-bar class="px-3" color="rgba(0,0,0, .1)" flat density="compact">
-    <v-avatar color="grey-darken-1" size="32" />
+    <v-btn variant="text" to="/"><v-avatar color="grey-darken-1" size="32" /></v-btn>
     <v-spacer />
     <v-tabs centered color="primary">
       <template v-for="item in links" :key="item.name">
