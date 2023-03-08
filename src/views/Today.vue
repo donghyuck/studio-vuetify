@@ -12,9 +12,9 @@
             <v-list-item prepend-icon="mdi-sale" title="Sale" value="sale"></v-list-item>
         </v-list>
     </v-navigation-drawer>
-    <v-main>
+    <v-layout>
         <v-parallax :src="bgPhoto.url" class="h-screen w-auto" />
-    </v-main>
+    </v-layout>
 </template>
 <script setup lang="ts">
 // Utilities

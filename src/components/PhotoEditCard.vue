@@ -23,7 +23,8 @@
             <v-text-field label="Name" v-model="localImage.name"></v-text-field>
         </v-card-subtitle>
         <v-card-text class="py-0">
-            <v-chip class="ma-2" color="pink" label text-color="white" :key="index" v-for="(tag, index) in tags">
+            <v-chip class="ma-2" color="pink" label text-color="white" :key="index"
+v-for="(tag, index) in tags">
                 <v-icon start icon="mdi-label"></v-icon>
                 {{ tag }}
             </v-chip>
@@ -74,23 +75,21 @@ const user = useUserStore()
 const photos = usePhotosStore()
 
 const props = defineProps({
-    image: Object
+    image: Object,
 })
 
 const localImage = ref(props.image)
+
 const tags = ref([])
 setTags(props.image)
 
 watch(() => props.image, (newVal, oldVal) => {
     localImage.value = newVal
     setTags(newVal)
-});
+})
 
-function setTags(image: Object) {
-    if (image.tags.length > 0)
-        tags.value = image.tags.split(',')
-    else
-        tags.value = []
+function setTags (image: Object) {
+    if (image.tags.length > 0) { tags.value = image.tags.split(',') } else { tags.value = [] }
 }
 
 const emit = defineEmits(['hideEvent'])

@@ -16,6 +16,7 @@ export const useUnsplashStore = defineStore({
   state: () => ({
     photos: [],
     isLoaded: false,
+    queryString: 'dark,girls,sexy',
   }),
   getters: {
     total: state => state.photos.length,
@@ -24,11 +25,10 @@ export const useUnsplashStore = defineStore({
     getRandomPhoto () {
       return this.photos[Math.floor(Math.random() * this.photos.length)]
     },
-    async fetch (queryString) {
-      if (this.isLoaded) return 
-      queryString = queryString || 'dark,girls,sexy'
+    async fetch () {
+      if (this.isLoaded) return  
       await unsplash.photos
-        .getRandom({ query: queryString, count: 50 })
+        .getRandom({ query: this.queryString, count: 50 })
         .then(result => {
           if (result.type === 'success') {
             this.photos = result.response

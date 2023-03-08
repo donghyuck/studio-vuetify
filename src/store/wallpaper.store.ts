@@ -1,7 +1,7 @@
 // Utilities
 import { defineStore } from "pinia";
 import axios from "axios";
-import { authHeader } from "@/util/helpers";
+import { API_HEADERS, authHeader } from "@/util/helpers";
 
 const baseUrl = `${import.meta.env.VITE_API_URL}/data/v1/actions/wallpapers`;
 
@@ -28,11 +28,7 @@ export const useWallpaperStore = defineStore({
     },
     async fetch() {
       try {
-        const headers = {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        };
-        Object.assign(headers, authHeader());
+        const headers = { ...API_HEADERS, ...authHeader() };
         this.wallpapers = [];
         const response = await axios({
           url: baseUrl,

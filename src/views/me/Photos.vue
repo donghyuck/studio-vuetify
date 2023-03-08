@@ -1,8 +1,7 @@
 <template>
     <v-navigation-drawer :rail="rail" permanent @click="rail = false" location="left">
         <v-list-subheader class="ma-5">
-            <v-btn prepend-icon="mdi-cloud-upload" variant="tonal" @click="visibleUploadDialog = true"
-                class="w-100">
+            <v-btn prepend-icon="mdi-cloud-upload" variant="tonal" @click="visibleUploadDialog = true" class="w-100">
                 Upload Photo
             </v-btn>
         </v-list-subheader>
@@ -40,8 +39,8 @@
             <pane size="30" max-size="50" min-size="20" v-if="!hideRightPane" class="split-pane">
                 <v-sheet class="h-100">
                     <v-container class="h-100">
-                        <v-row>
-                            <PhotoEditCard :image="image" @hideEvent="hideRightPane = true"></PhotoEditCard>
+                        <v-row style="min-height:300px;">
+                            <PhotoEditCard v-bind:image="image" @hideEvent="hideRightPane = true"></PhotoEditCard>
                         </v-row>
                     </v-container>
                 </v-sheet>
@@ -88,10 +87,10 @@ const visibleUploadDialog = ref(false)
 const visibleRef = ref(false)
 const indexRef = ref(0)
 const imgsRef = ref([])
+const onHide = () => (visibleRef.value = false)
 
 // splitpanes
 const hideRightPane = ref(true)
-const onHide = () => (visibleRef.value = false)
 
 async function refresh () {
     loading.value = true

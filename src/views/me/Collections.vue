@@ -1,7 +1,8 @@
 <template>
     <v-navigation-drawer :rail="rail" permanent @click="rail = false" location="left">
-        <v-list-subheader class="pa-5">
-            <v-btn prepend-icon="mdi-cloud-upload w-100" variant="outlined">
+        <v-list-subheader class="ma-5">
+            <v-btn prepend-icon="mdi-folder-plus" variant="tonal" class="w-100"
+                :to="{ name: 'collectionById', params: { id: 0 } }">
                 New Collections
             </v-btn>
         </v-list-subheader>
@@ -20,11 +21,11 @@
                         @click:append-inner="search"></v-text-field>
                 </v-col>
             </v-row>
-            <div v-masonry transition-duration="0.3s" item-selector=".item">
-                <div v-masonry-tile class="item" :key="index" v-for="(item, index) in collectionsOfPhotos">
-                    <CollectionCard :collection="item" :highQuality="highQuality"/>
+            <v-row v-masonry transition-duration="0.3s" item-selector=".item" justify="center" style="min-height:300px;">
+                <div v-masonry-tile class="item" :key="index" v-for="(item, index) in collectionsOfPhotos" >
+                    <CollectionCard :collection="item" :highQuality="highQuality" />
                 </div>
-            </div>
+            </v-row>
             <v-divider class="mt-5"></v-divider>
             <v-pagination v-model="page" :length="collections.pageCount" :total-visible="10" rounded="circle"
                 theme="light"></v-pagination>
@@ -40,17 +41,17 @@ import {
 // Components
 import CollectionCard from '@/components/CollectionCard.vue'
 
-// store 
-import { useCollectionsStore } from '@/store/collections.store' 
+// store
+import { useCollectionsStore } from '@/store/collections.store'
 const collections = useCollectionsStore()
 
 // value for naviagtion drawere shrink
 const rail = ref(false)
 
 // value for collection of photos
-const collectionsOfPhotos = ref([]);
+const collectionsOfPhotos = ref([])
 
-// value for high res image 
+// value for high res image
 const highQuality = ref(true)
 
 // value for pagination
@@ -59,8 +60,7 @@ const page = ref(1)
 // value for searching
 const loading = ref(false)
 
-
-function onResize() {
+function onResize () {
     if (window.innerWidth < 600) {
         if (!rail.value) { rail.value = true }
     } else {
@@ -68,7 +68,7 @@ function onResize() {
     }
 }
 
-function search(){}
+function search () { }
 
 watch(page, async (newVal, oldVal) => {
     page.value = newVal

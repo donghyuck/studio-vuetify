@@ -9,25 +9,23 @@
  */
 
 // Load vue core
-import router from "./router";
-import { createApp } from "vue";
+import router from './router'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 // Plugins
-import { registerPlugins } from "./plugins";
-import vuetify from "./plugins/vuetify";
+import { registerPlugins } from './plugins'
+import vuetify from './plugins/vuetify'
 
 // Load Layout vue.
-import App from './App.vue';
+import App from './App.vue'
 
 // mansonry layout plugin.
-import { VueMasonryPlugin } from 'vue-masonry';
-
-const app = createApp(App);
-registerPlugins(app);
+import { VueMasonryPlugin } from 'vue-masonry'
+const app = createApp(App)
+registerPlugins(app)
 app.use(createPinia())
-app.use(router);
-app.use(vuetify); 
+app.use(router)
+app.use(vuetify)
 app.use(VueMasonryPlugin)
-app.mount("#app");
-
+app.mount('#app')

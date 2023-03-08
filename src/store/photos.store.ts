@@ -1,9 +1,11 @@
 // Utilities
 import { defineStore } from "pinia";
 import axios from "axios";
-import { authHeader } from "@/util/helpers";
+import { authHeader, API_HEADERS } from "@/util/helpers";
 import { useAuthStore } from "@/store/auth.store";
 import noImage from "@/assets/img/no-image.jpg";
+
+const HTTP = "http";
 
 const baseUrl = `${
   import.meta.env.VITE_API_URL
@@ -13,7 +15,9 @@ const uploadByUrllUrl = `${
   import.meta.env.VITE_API_URL
 }/data/users/me/images/upload_by_url`;
 
-const filepondServerUrl = `${import.meta.env.VITE_API_URL}/data/images/0/filepond`
+const filepondServerUrl = `${
+  import.meta.env.VITE_API_URL
+}/data/images/0/filepond`;
 
 const DEFAULT_DOWNLOAD_OPTIONS = {
   thumbnail: false,
@@ -35,11 +39,11 @@ export const usePhotosStore = defineStore({
     error: null,
     NO_IMAGE: noImage,
   }),
-  getters:{
-    pageCount:(state) => ( parseInt( state.total/state.pageSize ) )
+  getters: {
+    pageCount: (state) => parseInt(state.total / state.pageSize + 1),
   },
   actions: {
-    setPage( newVal : number ){
+    setPage(newVal: number) {
       this.page = newVal;
       this.skip = (this.page - 1) * this.pageSize;
     },
@@ -60,7 +64,20 @@ export const usePhotosStore = defineStore({
     },
     getImageUrl(image: any, options: any) {
       options = { ...DEFAULT_DOWNLOAD_OPTIONS, ...options };
-      if (image != null && image.imageId > 0) {
+      if (image === null) return this.NO_IMAGE;
+      if (typeof image === "string") {
+        if (image.toLowerCase().startsWith(HTTP)) return image; 
+        if (options.thumbnail) {
+          return encodeURI(
+            `${import.meta.env.VITE_API_URL}/${ image }?thumbnail&height=${options.height}&width=${options.width}`
+          );
+        }else{
+          return encodeURI(
+            `${import.meta.env.VITE_API_URL}/${ image }`
+          );
+        }
+      }
+      if (image.imageId > 0) {
         if (options.thumbnail) {
           return encodeURI(
             `${import.meta.env.VITE_API_URL}/download/images/${
@@ -82,6 +99,7 @@ export const usePhotosStore = defineStore({
           );
         }
       }
+
       return this.NO_IMAGE;
     },
     getFilePondServerSettings() {
@@ -94,11 +112,7 @@ export const usePhotosStore = defineStore({
       };
     },
     async uploadByUrl(data: object) {
-      const headers = {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      };
-      Object.assign(headers, authHeader());
+      const headers = { ...API_HEADERS, ...authHeader() };
       axios({
         url: uploadByUrllUrl,
         method: "post",
@@ -113,11 +127,7 @@ export const usePhotosStore = defineStore({
         });
     },
     async fetch() {
-      const headers = {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      };
-      Object.assign(headers, authHeader());
+      const headers = { ...API_HEADERS, ...authHeader() };
       this.photos = [];
       axios({
         url: baseUrl,

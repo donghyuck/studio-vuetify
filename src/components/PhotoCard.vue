@@ -30,7 +30,7 @@
                         </v-list>
                     </v-menu> -->
                 <div class="align-self-center pa-1 photo-actions" v-if="isHovering" style="bottom:0; position: absolute;">
-                    <v-btn size="small" color="white" variant="text" icon="mdi-view-gallery-outline"
+                    <v-btn size="small" color="white" variant="text" icon="mdi-eye"
                         @click="emit('imageViewEvent', image)"></v-btn>
                     <v-btn size="small" color="white" variant="text" icon="mdi-image-edit"
                         @click="emit('imageEditEvent', image)"></v-btn>
@@ -53,17 +53,22 @@ const emit = defineEmits(['imageEditEvent', 'imageViewEvent'])
 </script>
 <style>
 .v-card.photo {
-    transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out; 
+    overflow: hidden;
 }
-
 .v-card.photo:not(.on-hover) {
-    opacity: 0.9;
+    opacity: 0.9;  
 }
-
+.v-card.photo img {
+    transition: transform .3s; /* Animation */
+}
+.v-card.photo:hover img {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 .v-card.photo .photo-actions {
     background: linear-gradient(45deg, rgba(37, 38, 43, 0.8) 0%, rgba(37, 38, 43, 0) 100%);
     backdrop-filter: blur(13px) saturate(160%);
-    box-shadow: rgb(0 0 0 / 16%) 0px -2px 6px 1px;
+    /* box-shadow: rgb(0 0 0 / 16%) 0px -2px 6px 1px; */
     width: 100%;
 }
 </style>

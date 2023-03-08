@@ -1,5 +1,5 @@
 <template>
-    <v-card class="collections mr-5 mb-5" width="310" height="100%">
+    <v-card class="collections mr-3 mb-3" color="grey-lighten-4" width="280">
         <v-img cover :src="photos.getImageUrl(collection.coverImage, { thumbnail: !highQuality, width: 300, height: 300 })"
             @load="this.$redrawVueMasonry()">
             <template v-slot:placeholder>
@@ -30,9 +30,13 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-card-item class="collections-details">
+            <router-link :to="{ name: 'collectionById', params: { id: collection.albumId } }">
+                <v-card-item class="collections-body">
+                </v-card-item>
+            </router-link>
+            <v-card-item class="collections-footer">
                 <v-card-title>{{ collection.name }}</v-card-title>
-                <v-card-subtitle> {{ collection.description }} </v-card-subtitle>
+                <v-card-subtitle class="font-weight-light"> {{ collection.description }} </v-card-subtitle>
                 <v-card-actions>
                     <v-list-item class="w-100 pa-0">
                         <template v-slot:prepend>
@@ -65,32 +69,48 @@ const props = defineProps({
     highQuality: Boolean,
     collection: Object,
 })
-console.log("usgin high quality", props.highQuality)
 
 </script>
 <style>
-.v-card.collections .collections-details {
-    margin-top: 250px;
+.v-card.collections .collections-body {
+    margin-top: -64px;
+    height: 230px;
+}
+
+.v-card.collections .collections-footer {
+    /* margin-top: 250px; */
     gap: 6px;
     background: linear-gradient(45deg, rgba(37, 38, 43, 0.8) 0%, rgba(37, 38, 43, 0) 100%);
     backdrop-filter: blur(13px) saturate(160%);
-    box-shadow: rgb(0 0 0 / 16%) 0px -2px 6px 1px;
+    /* box-shadow: rgb(0 0 0 / 16%) 0px -2px 6px 1px; */
     padding: 10px;
 }
+
+.v-card.collections.v-theme--light .collections-footer {
+    color: #fff;
+} 
+.v-card.collections.v-theme--light .v-toolbar .mdi-dots-vertical{
+    color: #fff;
+}
+
 .v-card.collections .v-card-title {
     font-size: 1.0rem;
 }
+
 .v-card.collections .v-card-text {
     font-size: 0.95rem;
     font-weight: 350;
 }
-.v-card.collections .collections-details .v-card-actions {
+
+.v-card.collections .collections-footer .v-card-actions {
     padding: 0;
 }
-.v-card.collections .collections-details .v-list-item-title {
+
+.v-card.collections .collections-footer .v-list-item-title {
     font-size: .9em;
 }
-.v-card.collections .collections-details .v-list-item-subtitle {
+
+.v-card.collections .collections-footer .v-list-item-subtitle {
     font-size: .8em;
 }
 </style>

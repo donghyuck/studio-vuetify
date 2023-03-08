@@ -91,12 +91,6 @@
                     </v-card>
                 </v-window-item>
             </v-window>
-            <!-- <v-spacer></v-spacer>
-                                <v-card-actions>
-                                    <v-btn variant="text">
-                                        Back
-                                    </v-btn>
-                                </v-card-actions> -->
         </v-card>
 </v-dialog>
 </template>
