@@ -22,7 +22,7 @@
                 </v-col>
             </v-row>
             <v-row v-masonry transition-duration="0.3s" item-selector=".item" justify="center" style="min-height:300px;">
-                <div v-masonry-tile class="item" :key="index" v-for="(item, index) in collectionsOfPhotos" >
+                <div v-masonry-tile class="item" :key="index" v-for="(item, index) in collectionsOfPhotos">
                     <CollectionCard :collection="item" :highQuality="highQuality" />
                 </div>
             </v-row>

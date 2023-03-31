@@ -53,11 +53,11 @@ const emit = defineEmits(['imageEditEvent', 'imageViewEvent'])
 </script>
 <style>
 .v-card.photo {
-    transition: opacity .4s ease-in-out; 
+    transition: opacity .4s ease-in-out;
     overflow: hidden;
 }
 .v-card.photo:not(.on-hover) {
-    opacity: 0.9;  
+    opacity: 0.9;
 }
 .v-card.photo img {
     transition: transform .3s; /* Animation */

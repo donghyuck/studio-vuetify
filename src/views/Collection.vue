@@ -136,9 +136,9 @@ const contents = ref([])
 
 // lightbox
 const lightboxRef = ref({ visible: false, imgs: [], index: 0 })
-function show(index: number) {
-    lightboxRef.value.index = index;
-    lightboxRef.value.visible = true;
+function show (index: number) {
+    lightboxRef.value.index = index
+    lightboxRef.value.visible = true
 }
 const editing = ref(false)
 const hasSaveOrUpdated = ref(false)
@@ -147,11 +147,11 @@ const isEditing = computed(() => {
     return (isNew.value || editing.value) && collection.value.editable
 })
 
-function save() {
+function save () {
     editing.value = !editing.value
     hasSaveOrUpdated.value = true
 }
-function hasHistory() { return window.history.length > 2 }
+function hasHistory () { return window.history.length > 2 }
 
 onMounted(async () => {
     let idToUse: number = 0
@@ -160,10 +160,10 @@ onMounted(async () => {
     if (idToUse > 0) {
         if (collections.isLoaded) { collection.value = collections.getById(idToUse) } else { collection.value = await collections.getCollectionById(idToUse) }
         contents.value = await collections.getContents(collection.value.albumId)
-        contents.value.forEach((item) => {
+        contents.value.forEach(item => {
             lightboxRef.value.imgs.push({
                 src: photos.getImageUrl(item.image),
-                title: item.image.name
+                title: item.image.name,
             })
         })
     } else {

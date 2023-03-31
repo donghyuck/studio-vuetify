@@ -28,7 +28,7 @@ const theme = useTheme()
 const systemTheme = ref('light')
 
 if (IN_BROWSER) {
-  const fn = function onThemeChange() {
+  const fn = function onThemeChange () {
     systemTheme.value = media!.matches ? 'dark' : 'light'
   }
 

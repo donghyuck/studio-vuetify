@@ -70,6 +70,8 @@ const props = defineProps({
     collection: Object,
 })
 
+console.log(props)
+
 </script>
 <style>
 .v-card.collections .collections-body {
@@ -88,7 +90,7 @@ const props = defineProps({
 
 .v-card.collections.v-theme--light .collections-footer {
     color: #fff;
-} 
+}
 .v-card.collections.v-theme--light .v-toolbar .mdi-dots-vertical{
     color: #fff;
 }

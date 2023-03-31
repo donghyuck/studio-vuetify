@@ -14,7 +14,7 @@ import { useAuthStore } from "@/store/auth.store";
 import accountsRoutes from "./accounts.router";
 import meRoutes from "./me.router";
 
-const ifAuthenticated = (to, from, next) => {
+const ifAuthenticated = (to:any, from:any, next:any) => {
   const auth = useAuthStore();
   if (auth.isLoggedIn) {
     next();

@@ -57,7 +57,7 @@
                                     </ckeditor>
                                 </v-card-text>
                                 <v-card-actions class="justify-end">
-                                    <v-btn @click="hasHistory() ? $router.go(-1) : $router.push('/')" variant="text" >Close</v-btn>
+                                    <v-btn @click="hasHistory() ? $router.go(-1) : $router.push('/')" variant="text">Close</v-btn>
                                     <v-btn color="primary" prepend-icon="mdi-content-save" variant="text" @click="saveOrUpdate">
                                         Save
                                     </v-btn>

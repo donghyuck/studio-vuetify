@@ -34,14 +34,14 @@
     </v-hover>
 </template>
 <script setup lang="ts">
-// Utilities 
-import { computed, } from 'vue'
+// Utilities
+import { computed } from 'vue'
 // Store
 import { useAttachmentsStore } from '@/store/attachments.store'
 const attachments = useAttachmentsStore()
 const props = defineProps({ attachment: Object })
 const emit = defineEmits(['previewEvent'])
 const thumbnailUrl = computed(() => {
-    return attachments.isAudio(props.attachment) ? attachments.thumbnails.AUDIO : attachments.getAttachmentUrl(props.attachment, { thumbnail: true, width: 300, height: 300 });
+    return attachments.isAudio(props.attachment) ? attachments.thumbnails.AUDIO : attachments.getAttachmentUrl(props.attachment, { thumbnail: true, width: 300, height: 300 })
 })
 </script>

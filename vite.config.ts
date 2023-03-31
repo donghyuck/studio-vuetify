@@ -6,7 +6,7 @@ import { checker } from 'vite-plugin-checker';
 
 // Utilities
 import { fileURLToPath, URL } from "node:url";
-import { defineConfig } from "vite";
+import { defineConfig, splitVendorChunkPlugin } from "vite";
 // import path from "path";
 
 // https://vitejs.dev/config/
@@ -39,6 +39,7 @@ export default defineConfig({
       //   lintCommand: 'stylelint ./src/**/*.{css,vue}',
       // },
     }),
+    splitVendorChunkPlugin()
   ],
   define: { "process.env": {} },
   resolve: {

@@ -28,7 +28,7 @@ export const useUnsplashStore = defineStore({
     async fetch () {
       if (this.isLoaded) return  
       await unsplash.photos
-        .getRandom({ query: this.queryString, count: 50 })
+        .getRandom({ query: this.queryString, featured: true, count: 50 })
         .then(result => {
           if (result.type === 'success') {
             this.photos = result.response

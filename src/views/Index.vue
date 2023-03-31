@@ -60,7 +60,7 @@ const headerStyle = computed(() => {
   }
 })
 
-const intervalTime: number = 15000
+const intervalTime: number = 50000
 let intervalId: number
 
 onMounted(async () => {
@@ -75,15 +75,17 @@ onUnmounted(() => {
   clearInterval(intervalId)
 })
 
-function updateBgImage() {
-  if (unsplash.total > 0) {
-    const proxyImage = new Image()
+function updateBgImage () {
+  if (unsplash.total > 0) { 
     const unsplashPhoto = unsplash.getRandomPhoto()
-    proxyImage.src = unsplashPhoto.urls.regular
-    proxyImage.onload = function () {
-      bgPhoto.url = proxyImage.src
-      bgPhoto.unsplash = unsplashPhoto
-      bgPhoto.visible = true
+    if( unsplashPhoto ){
+      const proxyImage = new Image()
+      proxyImage.src = unsplashPhoto.urls.raw
+      proxyImage.onload = function () {
+        bgPhoto.url = proxyImage.src
+        bgPhoto.unsplash = unsplashPhoto
+        bgPhoto.visible = true
+      }
     }
   }
 }

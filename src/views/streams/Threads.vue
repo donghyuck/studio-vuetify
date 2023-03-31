@@ -5,13 +5,13 @@
                 <v-col cols="12">
                     <v-menu open-on-hover>
                         <template v-slot:activator="{ props }">
-                            <v-toolbar color="rgba(0, 0, 0, 0)" density="compact" >
+                            <v-toolbar color="rgba(0, 0, 0, 0)" density="compact">
                                 <v-btn icon @click="hasHistory()
                                     ? $router.go(-1)
                                     : $router.push('/')">
                                     <v-icon>mdi-arrow-left</v-icon>
                                 </v-btn>
-                                <v-toolbar-title>{{ streamRef.displayName }}<small class="ml-5 font-weight-thin">{{ streamRef.description }}</small></v-toolbar-title> 
+                                <v-toolbar-title>{{ streamRef.displayName }}<small class="ml-5 font-weight-thin">{{ streamRef.description }}</small></v-toolbar-title>
                                 <v-spacer></v-spacer>
                                 <template v-slot:append>
                                     <v-tooltip location="top">
@@ -174,7 +174,7 @@ watch(page, async (newVal, oldVal) => {
 async function loadThreads () {
     const streamId = parseInt(props.id || '0')
     if (streams.isLoaded) { streamRef.value = streams.getById(streamId) } else { streamRef.value = await streams.getStreamById(streamId) }
-    if (threads.streamId !== streamId || !threads.isLoaded) { 
+    if (threads.streamId !== streamId || !threads.isLoaded) {
         threads.init(streamId)
         threads.setPage(page.value)
         loadingRef.value = true

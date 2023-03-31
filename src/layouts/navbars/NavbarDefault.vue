@@ -1,6 +1,6 @@
 <template>
   <v-app-bar class="px-3" color="rgba(0,0,0, .3)" flat density="compact" theme="dark">
-    <v-btn variant="text" to="/" ><v-avatar color="grey-darken-1" size="32" /></v-btn>
+    <v-btn variant="text" to="/"><v-avatar color="grey-darken-1" size="32" /></v-btn>
     <v-spacer />
     <template v-for="item in linksRef" :key="item.title">
       <v-btn v-if="!item.authenticationRequired || auth.isLoggedIn" :to="item.path" rounded="0"
@@ -15,10 +15,11 @@
       </template>
       <v-list density="compact">
         <templage v-for="(item, index) in streamsRef" :key="index">
-        <v-list-item  :to="{ name: 'streamById', params: { id: item.streamId } }" v-if="( isAllowed(item) )">
-          <v-list-item-title class="text-body-2"><span v-if="isAdultOnly(item)" class="label-adult">18+</span>{{ item.displayName }}</v-list-item-title>
-        </v-list-item>
-      </templage>
+          <v-list-item :to="{ name: 'streamById', params: { id: item.streamId } }" v-if="(isAllowed(item))">
+            <v-list-item-title class="text-body-2"><span v-if="isAdultOnly(item)" class="label-adult">18+</span>{{
+              item.displayName }}</v-list-item-title>
+          </v-list-item>
+        </templage>
       </v-list>
     </v-menu>
     <v-divider vertical />
@@ -65,7 +66,7 @@ interface MenuItem {
   name: string,
   title: string,
   path: string,
-  authenticationRequired: { type: boolean, default: false },
+  authenticationRequired: boolean,
 }
 
 const linksRef: MenuItem[] = [
@@ -84,7 +85,7 @@ onMounted(async () => {
   isLoaded.value = true
 })
 
-function isAllowed (item) {
+function isAllowed (item:any) {
   const adultOnly = isAdultOnly(item)
   if (adultOnly && !auth.isLoggedIn) { return false }
   return true

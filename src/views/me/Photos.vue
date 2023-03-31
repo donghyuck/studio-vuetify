@@ -25,7 +25,7 @@
                                 @click:append-inner="search"></v-text-field>
                         </v-col>
                     </v-row>
-                    <v-row>
+                    <v-row style="min-height:300px;">
                         <v-col :key="index" v-for="(image, index) in images" class="d-flex child-flex" cols="6" xl="1"
                             lg="2" md="3" sm="4">
                             <PhotoCard :image="image" @imageEditEvent="edit" @imageViewEvent="view"></PhotoCard>

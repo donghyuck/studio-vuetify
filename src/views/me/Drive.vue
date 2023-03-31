@@ -11,7 +11,7 @@
             <v-list-item prepend-icon="mdi-folder-multiple-image" title="Shared Photos" value="users"></v-list-item>
             <v-list-item prepend-icon="mdi-sale" title="Sale" value="users"></v-list-item>
         </v-list>
-    </v-navigation-drawer> 
+    </v-navigation-drawer>
 </template>
 <script setup lang="ts">
 // Utilities

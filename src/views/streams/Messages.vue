@@ -19,9 +19,9 @@
                                     </v-card-text>
                                 </v-card>
                                 <v-spacer></v-spacer>
-                                <template v-slot:append> 
+                                <template v-slot:append>
                                     <v-tooltip location="top">
-                                        <template v-slot:activator="{ props }" >
+                                        <template v-slot:activator="{ props }">
                                             <v-btn icon v-bind="props" @click="onShow(0)" v-if="imgsRef.length > 0">
                                                 <v-icon color="grey-lighten-1">
                                                     mdi-play-box-multiple-outline
@@ -171,27 +171,27 @@ onMounted(async () => {
 
 function toHtml (body : string) {
     const el = new DOMParser().parseFromString(body, 'text/html')
-    el.querySelectorAll('img').forEach( (value , index:number ) => { 
+    el.querySelectorAll('img').forEach((value, index:number) => {
        let imgSrc:string = value.getAttribute('src') || ''
        if (imgSrc != null && !imgSrc.startsWith('http')) {
         imgSrc = `${import.meta.env.VITE_API_URL}${imgSrc}`
-        value.setAttribute('src', imgSrc) 
-        value.setAttribute('data-index', index.toString() ) 
-        imgsRef.value.push( imgSrc ) 
+        value.setAttribute('src', imgSrc)
+        value.setAttribute('data-index', index.toString())
+        imgsRef.value.push(imgSrc)
        }
     })
-    el.querySelectorAll('a').forEach( (value , index:number ) => {  
-       if( value.getAttribute('target') == null ){
-        value.setAttribute('target', "_blank")   
+    el.querySelectorAll('a').forEach((value, index:number) => {
+       if (value.getAttribute('target') == null) {
+        value.setAttribute('target', '_blank')
        }
     })
     return el.documentElement.innerHTML
 }
 
-function onShow (index:number ) {
+function onShow (index:number) {
     visibleRef.value = true
     indexRef.value = index
-    console.log( visibleRef , indexRef )
+    console.log(visibleRef, indexRef)
 }
 
 function hasHistory () {
